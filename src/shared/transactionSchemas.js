@@ -1,13 +1,13 @@
-const joi = require('joi');
 const Joi = require('joi');
 
-const addTrasactionSchema = joi.object().keys({
+const addTrasactionSchema = Joi.object().keys({
     sender : Joi.string().required(),
     receiver : Joi.string().required(),
-    inventory1 : Joi.string().required(),
-    inventory2 : Joi.string().required(),
+    inventory1 : Joi.string(),
+    inventory2 : Joi.string(),
     item : Joi.string().required(),
-    amount : Joi.number().required()
+    amount : Joi.number().required(),
+    type : Joi.string().required()
 })
 
 module.exports = {

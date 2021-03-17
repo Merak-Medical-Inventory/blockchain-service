@@ -2,7 +2,7 @@ const Joi = require('joi');
 const {logger} = require('../helpers/Logger');
 const joiValidator = (schema, property) => { 
   return (req, res, next) => { 
-  const { error } = Joi.validate(req.body, schema); 
+  const { error } =schema.validate(req.body) 
   const valid = error == null; 
 
   if (valid) { 
