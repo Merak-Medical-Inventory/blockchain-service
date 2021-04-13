@@ -10,6 +10,17 @@ const addTrasactionSchema = Joi.object().keys({
     type : Joi.string().required()
 })
 
+const addDeviceTrasactionSchema = Joi.object().keys({
+    sender : Joi.string().allow(null,''),
+    receiver : Joi.string().allow(null,''),
+    inventory1 : Joi.string().allow(null,''),
+    inventory2 : Joi.string().allow(null,''),
+    device : Joi.string().required(),
+    type : Joi.string().required()
+})
+
+
 module.exports = {
-    addTrasactionSchema
+    addTrasactionSchema,
+    addDeviceTrasactionSchema
 }

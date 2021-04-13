@@ -1,7 +1,7 @@
 const SmartContract = artifacts.require("SmartContract");
-const DeviceTransactionContract = artifacts.require("DeviceTransactionContract");
+const DeviceTrasactionSmartContract = artifacts.require("DeviceTrasactionSmartContract");
 
 module.exports = function(deployer) {
   deployer.deploy(SmartContract);
-  deployer.deploy(DeviceTransactionContract);
+  deployer.deploy(DeviceTrasactionSmartContract);
 };

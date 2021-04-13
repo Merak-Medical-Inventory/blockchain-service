@@ -1,5 +1,7 @@
 const transaction = require('./transaction');
+const deviceTransaction = require('./deviceTransaction');
 
 module.exports = {
-    transaction
+    transaction,
+    deviceTransaction
 }

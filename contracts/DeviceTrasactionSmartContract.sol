@@ -1,6 +1,6 @@
 pragma solidity ^0.6.4;
 
-contract SmartContract {
+contract DeviceTrasactionSmartContract {
 
 struct Transaction { 
     string receiver;
