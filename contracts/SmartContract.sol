@@ -8,13 +8,13 @@ struct Transaction {
     string inventory1;
     string inventory2;
     string item;
-    string transactionType;
+    string date;
     uint amount;
 }
 
 mapping (string => Transaction) public transactionsMap;
 
-  function getTransaction(string memory _id) view public returns (string memory receiver , string memory sender , string memory inventory1, string memory inventory2 , string memory item , string memory transactionType , uint amount)
+  function getTransaction(string memory _id) view public returns (string memory receiver , string memory sender , string memory inventory1, string memory inventory2 , string memory item, uint amount, string memory date)
   {
     Transaction memory transaction = transactionsMap[_id];
     receiver = transaction.receiver;
@@ -23,10 +23,10 @@ mapping (string => Transaction) public transactionsMap;
     inventory2 = transaction.inventory2;
     item = transaction.item;
     amount = transaction.amount;
-    transactionType = transaction.transactionType;
+    date = transaction.date;
   }
 
-  function addTransaction(string memory _id ,string memory _sender,string memory _receiver , string memory _inventory1, string memory _inventory2, string memory _item, string memory _transactionType , uint _amount ) public {
+  function addTransaction(string memory _id ,string memory _sender,string memory _receiver , string memory _inventory1, string memory _inventory2, string memory _item, uint _amount,string memory _date ) public {
     Transaction memory transaction;
     transaction.receiver = _receiver;
     transaction.sender = _sender;
@@ -34,7 +34,7 @@ mapping (string => Transaction) public transactionsMap;
     transaction.inventory2 = _inventory2;
     transaction.item = _item;
     transaction.amount = _amount;
-    transaction.transactionType = _transactionType;
+    transaction.date = _date;
     transactionsMap[_id] = transaction;
   }
 }

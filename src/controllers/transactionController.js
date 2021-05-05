@@ -17,9 +17,9 @@ const getTransactionCtrl = async (req,res,next) => {
 
 const addTransactionCtrl = async (req,res,next) => {
     try {
-        const {sender,receiver,inventory1,inventory2,item,type,amount} = req.body;
+        const {sender,receiver,inventory1,inventory2,item,type,amount,date} = req.body;
         const id = uuidv4()+new Date().valueOf();
-        const data = await transaction.addTransaction(id,sender,receiver,inventory1,inventory2,item,type,amount);
+        const data = await transaction.addTransaction(id,sender,receiver,inventory1,inventory2,item,amount,date);
         handleSuccess(200,'Transaction created',res,next,{id,...data});
     } catch (e) {
         console.error('addTransactionCtrl -> ',e)

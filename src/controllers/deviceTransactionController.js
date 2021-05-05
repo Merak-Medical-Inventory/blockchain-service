@@ -17,9 +17,9 @@ const getDeviceTransactionCtrl = async (req,res,next) => {
 
 const addDeviceTransactionCtrl = async (req,res,next) => {
     try {
-        const {sender,receiver,inventory1,inventory2,device,type} = req.body;
+        const {sender,receiver,inventory1,inventory2,device,date} = req.body;
         const id = uuidv4()+new Date().valueOf();
-        const data = await deviceTransaction.addTransaction(id,sender,receiver,inventory1,inventory2,device,type);
+        const data = await deviceTransaction.addTransaction(id,sender,receiver,inventory1,inventory2,device,date);
         handleSuccess(200,'Device transaction created',res,next,{id,...data});
     } catch (e) {
         console.error('addDeviceTransactionCtrl -> ',e)

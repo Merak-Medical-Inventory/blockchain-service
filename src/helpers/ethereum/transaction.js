@@ -1,8 +1,8 @@
 const {transactionContract} = require('./contracts');
 const {logger} = require('../Logger'); 
 
-const addTransaction = async (id,sender,receiver,inventory1,inventory2,item,type,amount) => {
-    const response = await transactionContract.methods.addTransaction(id,sender,receiver,inventory1,inventory2,item,type,amount).send({from: process.env.WALLET,gas:3000000})
+const addTransaction = async (id,sender,receiver,inventory1,inventory2,item,amount,date) => {
+    const response = await transactionContract.methods.addTransaction(id,sender,receiver,inventory1,inventory2,item,amount,date).send({from: process.env.WALLET,gas:3000000})
     logger.info('AddTransaction -> ',response);
     return response;
 }

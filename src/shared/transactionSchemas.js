@@ -7,7 +7,8 @@ const addTrasactionSchema = Joi.object().keys({
     inventory2 : Joi.string().allow(null,''),
     item : Joi.string().required(),
     amount : Joi.number().required(),
-    type : Joi.string().required()
+    type : Joi.string(),
+    date : Joi.string().required()
 })
 
 const addDeviceTrasactionSchema = Joi.object().keys({
@@ -16,7 +17,8 @@ const addDeviceTrasactionSchema = Joi.object().keys({
     inventory1 : Joi.string().allow(null,''),
     inventory2 : Joi.string().allow(null,''),
     device : Joi.string().required(),
-    type : Joi.string().required()
+    type : Joi.string(),
+    date : Joi.string().required()
 })
 
 
